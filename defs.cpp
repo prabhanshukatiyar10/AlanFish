@@ -15,7 +15,7 @@ const vector<int> KingDir = { -1, -10,	1, 10, -9, -11, 11, 9 };
 const vector<int> KnightDir = { -8, -19,	-21, -12, 8, 19, 21, 12 };
 const vector<int> RookDir = {-10 , 10, -1, 1};
 const vector<int> BishopDir = {-11, -9, 9, 11};
-
+vector<vector<int>> directions;
 int pcCol[14] = {BOTH, WHITE, WHITE, WHITE, WHITE, WHITE, WHITE, BLACK, BLACK, BLACK, BLACK, BLACK, BLACK, BOTH};
 int pcVal[14] = {0,100,325,325,550,1000,50000,100,325,325,550,1000,50000,0};
 
@@ -32,6 +32,11 @@ string getNamefrom120[120];
 int casPerm[120];
 void Init()
 {
+    directions = vector<vector<int>>(4);
+    directions[King] = KingDir;
+    directions[Rook] = RookDir;
+    directions[Bishop] = BishopDir;
+    directions[Knight] = KnightDir;
     for(int i=0; i<120; i++)
     {
         getNamefrom120[i]="..";
@@ -71,7 +76,7 @@ void HashInit()
 {
     random_device rd;
     default_random_engine gen(rd());
-    gen.seed(69);
+    gen.seed(69420);
     uniform_int_distribution<U64> dist(0,0xFFFFFFFFFFFFFFFF);
 
     for(int i=0; i<13; i++)

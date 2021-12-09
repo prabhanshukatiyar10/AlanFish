@@ -70,11 +70,12 @@ void Agent::AddWhitePawnCapMove(int from, int to, int cap)
 }
 void Agent::AddAllWhitePawnMoves()
 {
-	for(int sq120:b->pieceList[wP])
+	U64 t_info = b->pcList[wP].info;
+	while(b->pcList[wP].info)
 	{
+		int sq120 = get120from64[b->pcList[wP].PopBit()];
 		if(b->pieces[sq120+10]==EMPTY)
 			AddWhitePawnMove(sq120, sq120+10);
-
 		if(pcCol[b->pieces[sq120+9]]==BLACK)
 			AddWhitePawnCapMove(sq120, sq120+9, b->pieces[sq120+9]);
 		if(pcCol[b->pieces[sq120+11]]==BLACK)
@@ -86,7 +87,13 @@ void Agent::AddAllWhitePawnMoves()
 
 		if((sq120+9)==b->enPas || (sq120+11)==b->enPas)
 			AddEnPassantMove(MOVE(sq120, b->enPas, bP, EMPTY, MFLAGEP));
-	}
+		}
+	b->pcList[wP].info = t_info;
+
+	// for(int sq120:b->pieceList[wP])
+	// {
+		
+	// }
 }
 
 /*----------------------------------------------------WHITE PAWN--------------------------------------------*/
@@ -118,8 +125,10 @@ void Agent::AddBlackPawnCapMove(int from, int to, int cap)
 }
 void Agent::AddAllBlackPawnMoves()
 {
-	for(int sq120:b->pieceList[bP])
+	U64 t_info = b->pcList[bP].info;
+	while(b->pcList[bP].info)
 	{
+		int sq120 = get120from64[b->pcList[bP].PopBit()];
 		if(b->pieces[sq120-10]==EMPTY)
 			AddBlackPawnMove(sq120, sq120-10);
 
@@ -134,7 +143,12 @@ void Agent::AddAllBlackPawnMoves()
 
 		if((sq120-9)==b->enPas || (sq120-11)==b->enPas)
 			AddEnPassantMove(MOVE(sq120, b->enPas, wP, EMPTY, MFLAGEP));
-	}
+		}
+	b->pcList[bP].info = t_info;
+	// for(int sq120:b->pieceList[bP])
+	// {
+		
+	// }
 }
 
 
@@ -152,17 +166,18 @@ void Agent::AddSlidingMoves()
 
 	for(int pc:slp)
 	{
-		vector<vector<int>> dirList;
+		vector<int> dirList;
 		if(isBishopQueen[pc])
-			dirList.push_back(BishopDir);
+			dirList.push_back(Bishop);
 		if(isRookQueen[pc])
-			dirList.push_back(RookDir);
-
-		for(int sq:b->pieceList[pc])
+			dirList.push_back(Rook);
+		U64 t_info = b->pcList[pc].info;
+		while(b->pcList[pc].info)
 		{
-			for(auto &dL:dirList)
+			int sq = get120from64[b->pcList[pc].PopBit()];
+			for(int dL:dirList)
 			{
-				for(int dir:dL)
+				for(int dir:directions[dL])
 				{
 					int cursq = sq;
 					while(b->pieces[cursq+dir]!=OUT)
@@ -181,6 +196,7 @@ void Agent::AddSlidingMoves()
 				}
 			}
 		}
+		b->pcList[pc].info = t_info;
 	}
 }
 
@@ -197,14 +213,17 @@ void Agent::AddNonSlidingMoves()
 
 	for(int pc:nsp)
 	{
-		vector<int> dir;
+		int dir;
 		if(isKnight[pc])
-			dir = KnightDir;
+			dir = Knight;
 		else
-			dir = KingDir;
-		for(int sq:b->pieceList[pc])
+			dir = King;
+
+		U64 t_info = b->pcList[pc].info;
+		while(b->pcList[pc].info)
 		{
-			for(int d:dir)
+			int sq = get120from64[b->pcList[pc].PopBit()];
+			for(int d:directions[dir])
 			{
 				int curpc = b->pieces[sq+d];
 				if(curpc==OUT)
@@ -218,6 +237,7 @@ void Agent::AddNonSlidingMoves()
 
 			}
 		}
+		b->pcList[pc].info = t_info;
 	}
 }
 
@@ -276,6 +296,7 @@ void Agent::AddBlackCastles()
 
 vector<Move> Agent::FindMoves()
 {
+
 	moveList = vector<Move>(0);
 	if(b->sideToMove==WHITE)
 	{
@@ -289,7 +310,7 @@ vector<Move> Agent::FindMoves()
 	}
 	AddSlidingMoves();
 	AddNonSlidingMoves();
-
+	
 	return moveList;
 }
 

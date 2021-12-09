@@ -16,7 +16,7 @@ class Board
     
 public:
     int pieces[120];
-    BitBoard pawns[3];
+    BitBoard pawns;
     
     int sideToMove;
     int enPas;
@@ -31,12 +31,11 @@ public:
     int minCount[2];
     int material[2];
 
-    set<int> pieceList[13];
+    BitBoard pcList[13];
 
 
     vector<History> hist;
     int ply;
-    int hisply;
 
     bool OnBoard(int sq);
     bool NonEmpty(int sq);

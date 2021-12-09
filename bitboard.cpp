@@ -44,19 +44,19 @@ int BitBoard::CountBits()
 }
 void BitBoard::Print()
 {
-    // cout << CountBits() << " " << bitset<64>(info) << endl;
+    cout << CountBits() << " " << bitset<64>(info) << endl;
 
-    // for(int r=7; r>=0; r--)
-    // {
-    //     for(int f=0; f<8; f++)
-    //     {
-    //         int sq64 = get64fromFR[f][r];
-    //         if((info & (1ULL << sq64))>0)
-    //             cout << "X" << " ";
-    //         else
-    //             cout << "." << " ";
-    //     }
-    //     cout << endl;
-    // }
-    // cout << endl;
+    for(int r=7; r>=0; r--)
+    {
+        for(int f=0; f<8; f++)
+        {
+            int sq64 = get64fromFR[f][r];
+            if((info & (1ULL << sq64))>0)
+                cout << "X" << " ";
+            else
+                cout << "." << " ";
+        }
+        cout << endl;
+    }
+    cout << endl;
 }

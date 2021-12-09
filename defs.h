@@ -50,10 +50,8 @@ extern bool isRookQueen[14];
 extern bool isKing[14];
 extern bool isSliding[14];
 
-extern const vector<int> KingDir;
-extern const vector<int> BishopDir;
-extern const vector<int> RookDir;
-extern const vector<int> KnightDir;
+enum {Knight, Bishop, Rook, King};
+extern vector<vector<int>> directions;
 
 extern int casPerm[120];
 

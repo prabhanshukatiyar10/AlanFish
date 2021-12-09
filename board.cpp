@@ -68,8 +68,9 @@ void Board::ResetBoard()
 {
 	for(int i=0; i<120; i++)
 		pieces[i]=OUT;
-	for(int i=0; i<3; i++)
-		pawns[i].Reset();
+	// for(int i=0; i<3; i++)
+	// 	pawns[i].Reset();
+	pawns.Reset();
 	
 	sideToMove = BOTH;
 	enPas = NO_SQ;
@@ -89,11 +90,10 @@ void Board::ResetBoard()
 	}
 
 	for(int i=0; i<13; i++)
-		pieceList[i].clear();
+		pcList[i].Reset();
 	
 	hist = vector<History>(0);
 	ply=0;
-	hisply=0;
 }
 
 void Board::LoadPosition(string fen)
@@ -206,7 +206,7 @@ void Board::UpdateCount()
 			continue;
 		int pc = pieces[i];
 		pcCount[pc]++;
-		pieceList[pc].insert(i);
+		pcList[pc].SetBit(get64from120[i]);
 		int col = pcCol[pc];
 		if(isBig[pc])
 			bigCount[col]++;
@@ -220,8 +220,7 @@ void Board::UpdateCount()
 		if(isPawn[pc])
 		{
 			int sq64 = get64from120[i];
-			pawns[col].SetBit(sq64);
-			pawns[BOTH].SetBit(sq64);
+			pawns.SetBit(sq64);
 		}
 	}
 }
@@ -240,15 +239,21 @@ void Board::Print(bool onlyboard)
 	cout << endl;
 	if(onlyboard)
 		return;
-	for(int i=0; i<3; i++)
-		pawns[i].Print();
+	pawns.Print();
 	
 	cout << endl;
 	for(int i=1; i<13; i++)
 	{
 		cout << pcName[i] << ": " << pcCount[i] << "[ ";
-		for(int x:pieceList[i])
-			cout << getNamefrom120[x] << " ";
+		// for(int x:pieceList[i])
+		// 	cout << getNamefrom120[x] << " ";
+		U64 t_info = pcList[i].info;
+		while(pcList[i].info)
+		{
+			int sq = pcList[i].PopBit();
+			cout << getNamefrom120[get120from64[sq]] << ' ';
+		}
+		pcList[i].info = t_info;
 		cout << "]" << endl;
 	}
 	cout << endl;
@@ -305,8 +310,15 @@ bool Board::Verify()
 	//check piece list
 	for(int i=1; i<13; i++)
 	{
-		for(int sq:pieceList[i])
+		// for(int sq:pieceList[i])
+		// 	ASSERT(i==pieces[sq]);
+		U64 t_info = pcList[i].info;
+		while(pcList[i].info)
+		{
+			int sq = get120from64[pcList[i].PopBit()];
 			ASSERT(i==pieces[sq]);
+		}
+		pcList[i].info = t_info;
 	}
 	//check bitboard
 	for(int i=0; i<3; i++)
@@ -353,7 +365,7 @@ int Board::IsAttacked(int sq120, int side)
 			return bP;
 	}
 	// knights
-	for(int dir:KnightDir)
+	for(int dir:directions[Knight])
 	{
 		int cur = dir+sq120;
 		if(pieces[cur]==OUT)
@@ -363,7 +375,7 @@ int Board::IsAttacked(int sq120, int side)
 	}
 	
 	// rook + queen
-	for(int dir:RookDir)
+	for(int dir:directions[Rook])
 	{
 		int cur = sq120;
 		while(pieces[cur+dir]!=OUT)
@@ -383,7 +395,7 @@ int Board::IsAttacked(int sq120, int side)
 	}
 
 	// bishop + queen
-	for(int dir:BishopDir)
+	for(int dir:directions[Bishop])
 	{
 		int cur = sq120;
 		while(pieces[cur+dir]!=OUT)
@@ -403,7 +415,7 @@ int Board::IsAttacked(int sq120, int side)
 	}
 
 	// king
-	for(int dir:KingDir)
+	for(int dir:directions[King])
 	{
 		int cur = sq120+dir;
 		if(pieces[cur]==OUT)
@@ -447,7 +459,8 @@ void Board::ClearPiece(int sq)
 
 	HashPc(pc,sq);
 	pieces[sq]=EMPTY;
-	pieceList[pc].erase(sq);
+	// pieceList[pc].erase(sq);
+	pcList[pc].ClearBit(get64from120[sq]);
 	material[col] -= pcVal[pc];
 	pcCount[pc]--;
 
@@ -460,8 +473,8 @@ void Board::ClearPiece(int sq)
 
 	if(isPawn[pc])
 	{
-		pawns[col].ClearBit(get64from120[sq]);
-		pawns[BOTH].ClearBit(get64from120[sq]);
+		pawns.ClearBit(get64from120[sq]);
+		
 	}
 	// U64 cur = posKey;
 	// ASSERT(cur==SetHash());
@@ -474,7 +487,7 @@ void Board::AddPiece(int pc, int sq)
 	ASSERT(OnBoard(sq));
 	HashPc(pc, sq);
 	pieces[sq]=pc;
-	pieceList[pc].insert(sq);
+	pcList[pc].SetBit(get64from120[sq]);
 
 	int col = pcCol[pc];
 	pcCount[pc]++;
@@ -490,8 +503,7 @@ void Board::AddPiece(int pc, int sq)
 
 	if(isPawn[pc])
 	{
-		pawns[col].SetBit(get64from120[sq]);
-		pawns[BOTH].SetBit(get64from120[sq]);
+		pawns.SetBit(get64from120[sq]);
 	}
 	// U64 cur = posKey;
 	// ASSERT(cur==SetHash());
@@ -508,17 +520,15 @@ void Board::MovePiece(int from, int to)
 
 	pieces[from] = EMPTY;
 	pieces[to] = pc;
-	pieceList[pc].erase(from);
-	pieceList[pc].insert(to);
+	pcList[pc].ClearBit(get64from120[from]);
+	pcList[pc].SetBit(get64from120[to]);
 
 	if(isPawn[pc])
 	{
 		int col = pcCol[pc];
-		pawns[BOTH].ClearBit(get64from120[from]);
-		pawns[col].ClearBit(get64from120[from]);
+		pawns.ClearBit(get64from120[from]);
 
-		pawns[BOTH].SetBit(get64from120[to]);
-		pawns[col].SetBit(get64from120[to]);
+		pawns.SetBit(get64from120[to]);
 	}
 	HashPc(pc, from);
 	HashPc(pc, to);
@@ -540,8 +550,7 @@ void Board::Undo()
 	int casflag = move & MFLAGCA;
 	int epflag = move & MFLAGEP;
 	int psflag = move & MFLAGPS;
-	// cout << "Undoing the move: ";
-	// PrintMove(move);
+
 	sideToMove ^= 1;
 	HashSide();
 
@@ -688,7 +697,9 @@ bool Board::MakeMove(int move)
 	HashSide();
 	
 	ASSERT(Verify());
-	int kingsq = *(pieceList[(1^sideToMove)*6 + wK].begin());
+	int kingsq = pcList[(1^sideToMove)*6 + wK].PopBit();
+	pcList[(1^sideToMove)*6 + wK].SetBit(kingsq);
+	kingsq = get120from64[kingsq];
 	//cout << "ended, next move is of " << sideToMove << endl;
 	if(IsAttacked(kingsq, sideToMove))
 	{

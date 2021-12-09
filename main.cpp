@@ -23,40 +23,40 @@ int main()
 	while(getline(file, line))
 		fenlist.push_back(line);
 
-	string fen = "8/8/2k5/5q2/5n2/8/5K2/8 b - - 0 1";
-	//cin >> fen;
-	Board b;
-	b.LoadPosition(fen);
-	b.Print(false);
-	ASSERT((b.Verify()));
-	// b.PrintMap();
-	Agent a(&b);
-	// a.FindMoves();
+	// string fen = "8/8/2k5/5q2/5n2/8/5K2/8 b - - 0 1";
+	// //cin >> fen;
+	// Board b;
+	// b.LoadPosition(fen);
+	// b.Print(false);
+	// ASSERT((b.Verify()));
+	// // b.PrintMap();
+	// Agent a(&b);
+	// // a.FindMoves();
 	
 
-	for(int d=4; d<5; d++)
-	{
-		//b.LoadPosition(fen);
-		U64 ans=0;
-		a.TotalMoves(d,ans);
-		cout << d << ": " << ans << endl;
-	}
+	// for(int d=4; d<5; d++)
+	// {
+	// 	//b.LoadPosition(fen);
+	// 	U64 ans=0;
+	// 	a.TotalMoves(d,ans);
+	// 	cout << d << ": " << ans << endl;
+	// }
 	// int m = MOVE(A2, A4, EMPTY, EMPTY, MFLAGPS);
 	// b.MakeMove(m);
 	// b.Verify();
 	// b.Print(false);
-	// for(string fen:fenlist)
-	// {
-	// 	Board b;
-	// 	Agent a(&b);
-	// 	b.LoadPosition(fen);
-	// 	for(int d=1; d<6; d++)
-	// 	{
-	// 		// cout << "running" << d << endl;
-	// 		U64 ans=0;
-	// 		a.TotalMoves(d,ans);
-	// 		cout << ans << " " << flush;
-	// 	}
-	// 	cout << endl;
-	// }
+	for(string fen:fenlist)
+	{
+		Board b;
+		Agent a(&b);
+		b.LoadPosition(fen);
+		for(int d=1; d<6; d++)
+		{
+			// cout << "running" << d << endl;
+			U64 ans=0;
+			a.TotalMoves(d,ans);
+			cout << ans << " " << flush;
+		}
+		cout << endl;
+	}
 }
