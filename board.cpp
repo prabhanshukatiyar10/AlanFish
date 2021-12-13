@@ -662,10 +662,10 @@ bool Board::MakeMove(int move)
 		{
 			
 			enPas = to-10; 
-			// if(getRankfrom120[to]!=RANK_4)
-			// {
-			// 	PrintMove(move);
-			// }
+			if(getRankfrom120[to]!=RANK_4)
+			{
+				PrintMove(move);
+			}
 			ASSERT(getRankfrom120[to]==RANK_4);
 		}
 		else

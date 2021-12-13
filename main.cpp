@@ -11,6 +11,9 @@
 #define CASTLE1 "r3k2r/p1ppqpb1/bn2pnp1/3PN3/1p2P3/2N2Q1p/PPPBBPPP/R3K2R w KQkq - 0 1"
 #define CASTLE2 "3rk2r/8/8/8/8/8/6p1/R3K2R w KQk - 0 1"
 
+#define WAC1 "2rr3k/pp3pp1/1nnqbN1p/3pN3/2pP4/2P3Q1/PPB4P/R4RK1 w - -"
+#define test2 "r1b1kb1r/pppp1ppp/5q2/4n3/3KP3/2N3PN/PPP4P/R1BQ1B1R b kq - 0 1"
+
 #define TEST "r3k2r/p1ppqpb1/bn2pnp1/3PN3/1p2P3/2N2Q1p/PPPBBPPP/R3K2R w KQkq - 0 1"
 int main()
 {
@@ -20,7 +23,7 @@ int main()
 
 	Board b;
 	Agent a(&b);
-	b.LoadPosition(START);
+	b.LoadPosition(test2);
 	while(true)
 	{
 		b.Print(true);
@@ -32,7 +35,7 @@ int main()
 			b.Undo();
 		else if(s[0]=='s')
 		{
-			a.sInfo.depth = 4;
+			a.sInfo.depth = 6;
 			a.SearchPos();
 		}
 		else

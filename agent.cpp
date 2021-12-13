@@ -434,9 +434,10 @@ int Agent::SetPV(int depth)
 
 	while(mv && priVar.size()<depth)
 	{
-		priVar.push_back(mv);
 		if(!IsValidMove(mv))
 			break;
+		priVar.push_back(mv);
+		
 		b->MakeMove(mv);
 		mv = table.GetMove(b->posKey);
 	}
@@ -498,11 +499,11 @@ void Agent::InitSearch()
 void Agent::SearchPos()
 {
 	int bestMove = 0;
-	int bestScore = INT_MIN;
-
+	int bestScore = INT_MIN+1;
+	InitSearch();
 	for(int cd =1; cd<=sInfo.depth; cd++)
 	{
-		bestScore = AlphaBeta(INT_MIN, INT_MAX, cd, 1);
+		bestScore = AlphaBeta(INT_MIN+1, INT_MAX, cd, 1);
 		SetPV(cd);
 		bestMove = priVar[0];
 
@@ -527,14 +528,13 @@ int Agent::AlphaBeta(int alpha, int beta, int depth, int doNull)
 	if(b->ply>=MAXDEPTH)
 		return EvalPos();
 	
-	FindMoves();
+	vector<Move> mL = FindMoves();
 	int legal=0;
 	int alpha0 = alpha;
-	int beta0 = beta;
-	int score = INT_MIN;
+	int score = INT_MIN+1;
 	int bestmove = 0;
 
-	for(Move m:moveList)
+	for(Move m:mL)
 	{
 		int mv = m.move;
 		if(!b->MakeMove(mv))
@@ -552,7 +552,8 @@ int Agent::AlphaBeta(int alpha, int beta, int depth, int doNull)
 				sInfo.fh++;
 				return beta;
 			}
-				
+			// cout << "$$$$ ";
+			// PrintMove(mv);
 			alpha=score;
 			bestmove = mv;
 		}
@@ -569,7 +570,10 @@ int Agent::AlphaBeta(int alpha, int beta, int depth, int doNull)
 	}
 
 	if(alpha!=alpha0)
+	{
 		table.Insert(b->posKey, bestmove);
+	}
+		
 
 	return alpha;
 }
