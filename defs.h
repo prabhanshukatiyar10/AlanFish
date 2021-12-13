@@ -3,7 +3,7 @@
 #ifndef DEFS_H
 #define DEFS_H
 
-// #define DEBUG 
+#define DEBUG 
 
 #ifndef DEBUG
 #define ASSERT(n)
@@ -20,6 +20,8 @@ exit(1);\
 #endif
 
 #include <bits/stdc++.h>
+#include <random>
+#include<time.h>
 using namespace std;
 
 typedef unsigned long long U64;
@@ -68,6 +70,8 @@ extern int getFilefrom120[120];
 extern int getRankfrom120[120];
 extern string getNamefrom120[120];
 
+
+
 extern void Init();
 
 extern U64 pieceKeys[13][120];
@@ -76,5 +80,9 @@ extern U64 sideKey;
 // extern U64 fiftyKeys[100];
 
 extern void HashInit();
+
+extern vector<vector<int>> sqScore;
+extern int MateScore;
+extern void InitSqScore();
 
 #endif

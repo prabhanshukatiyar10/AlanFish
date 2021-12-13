@@ -305,7 +305,7 @@ bool Board::Verify()
 			t_pawns[BOTH].SetBit(sq64);
 			
 		}
-		ASSERT(pieceList[pc].find(i)!=pieceList[pc].end());
+		//ASSERT(pieceList[pc].find(i)!=pieceList[pc].end());
 	}
 	//check piece list
 	for(int i=1; i<13; i++)
@@ -321,14 +321,14 @@ bool Board::Verify()
 		pcList[i].info = t_info;
 	}
 	//check bitboard
-	for(int i=0; i<3; i++)
-		ASSERT(t_pawns[i].info==pawns[i].info);
+	// for(int i=0; i<3; i++)
+	// 	ASSERT(t_pawns[i].info==pawns[i].info);
 
 	// check count
 	for(int i=1; i<13; i++)
 	{
 		ASSERT(t_pcCount[i]==pcCount[i]);
-		ASSERT(t_pcCount[i]==pieceList[i].size());
+		//ASSERT(t_pcCount[i]==pieceList[i].size());
 	}
 	
 	for(int i=0; i<2; i++)
@@ -338,11 +338,11 @@ bool Board::Verify()
 		ASSERT(t_minCount[i]==minCount[i]);
 		ASSERT(t_material[i]==material[i]);
 	}
-	ASSERT(t_pcCount[bP]==pawns[BLACK].CountBits());
-	ASSERT(t_pcCount[wP]==pawns[WHITE].CountBits());
+	//ASSERT(t_pcCount[bP]==pawns[BLACK].CountBits());
+	//ASSERT(t_pcCount[wP]==pawns[WHITE].CountBits());
 
 	//exactly 1 king
-	ASSERT(pieceList[wK].size()==1 && pieceList[bK].size()==1);
+	//ASSERT(pieceList[wK].size()==1 && pieceList[bK].size()==1);
 	U64 curKey = posKey;
 	SetHash();
 	if(curKey!=posKey)
@@ -516,7 +516,7 @@ void Board::MovePiece(int from, int to)
 	
 	int pc = pieces[from];
 
-	ASSERT(pieceList[pc].find(from)!=pieceList[pc].end());
+	//ASSERT(pieceList[pc].find(from)!=pieceList[pc].end());
 
 	pieces[from] = EMPTY;
 	pieces[to] = pc;
@@ -553,6 +553,7 @@ void Board::Undo()
 
 	sideToMove ^= 1;
 	HashSide();
+	ply--;
 
 	ASSERT(Verify());
 	if(prom!=EMPTY)
@@ -661,6 +662,10 @@ bool Board::MakeMove(int move)
 		{
 			
 			enPas = to-10; 
+			// if(getRankfrom120[to]!=RANK_4)
+			// {
+			// 	PrintMove(move);
+			// }
 			ASSERT(getRankfrom120[to]==RANK_4);
 		}
 		else

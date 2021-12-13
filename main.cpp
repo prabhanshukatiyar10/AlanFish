@@ -16,47 +16,83 @@ int main()
 {
 	Init();
 	HashInit();
+	InitSqScore();
 
-	ifstream file("fen.txt");
-	string line;
-	vector<string> fenlist;
-	while(getline(file, line))
-		fenlist.push_back(line);
+	Board b;
+	Agent a(&b);
+	b.LoadPosition(START);
+	while(true)
+	{
+		b.Print(true);
+		string s;
+		cin >> s;
+		if(s[0]=='q')
+			break;
+		if(s[0]=='t')
+			b.Undo();
+		else if(s[0]=='s')
+		{
+			a.sInfo.depth = 4;
+			a.SearchPos();
+		}
+		else
+		{
+			int mv = a.ParseMove(s);
+			if(mv)
+			{
+				a.table.Insert(b.posKey, mv);
+				b.MakeMove(mv);
+				
+			}
+				
+			else
+				cout << "invalid move" << endl;
+		}
+		
+	}
 
-	// string fen = "8/8/2k5/5q2/5n2/8/5K2/8 b - - 0 1";
-	// //cin >> fen;
-	// Board b;
-	// b.LoadPosition(fen);
-	// b.Print(false);
-	// ASSERT((b.Verify()));
-	// // b.PrintMap();
-	// Agent a(&b);
-	// // a.FindMoves();
+
+
+	// ifstream file("fen.txt");
+	// string line;
+	// vector<string> fenlist;
+	// while(getline(file, line))
+	// 	fenlist.push_back(line);
+
+	// // string fen = "8/8/2k5/5q2/5n2/8/5K2/8 b - - 0 1";
+	// // //cin >> fen;
+	// // Board b;
+	// // b.LoadPosition(fen);
+	// // b.Print(false);
+	// // ASSERT((b.Verify()));
+	// // // b.PrintMap();
+	// // Agent a(&b);
+	// // // a.FindMoves();
 	
 
-	// for(int d=4; d<5; d++)
+	// // for(int d=4; d<5; d++)
+	// // {
+	// // 	//b.LoadPosition(fen);
+	// // 	U64 ans=0;
+	// // 	a.TotalMoves(d,ans);
+	// // 	cout << d << ": " << ans << endl;
+	// // }
+	// // int m = MOVE(A2, A4, EMPTY, EMPTY, MFLAGPS);
+	// // b.MakeMove(m);
+	// // b.Verify();
+	// // b.Print(false);
+	// for(string fen:fenlist)
 	// {
-	// 	//b.LoadPosition(fen);
-	// 	U64 ans=0;
-	// 	a.TotalMoves(d,ans);
-	// 	cout << d << ": " << ans << endl;
+	// 	Board b;
+	// 	Agent a(&b);
+	// 	b.LoadPosition(fen);
+	// 	for(int d=1; d<6; d++)
+	// 	{
+	// 		// cout << "running" << d << endl;
+	// 		U64 ans=0;
+	// 		a.TotalMoves(d,ans);
+	// 		cout << ans << " " << flush;
+	// 	}
+	// 	cout << endl;
 	// }
-	// int m = MOVE(A2, A4, EMPTY, EMPTY, MFLAGPS);
-	// b.MakeMove(m);
-	// b.Verify();
-	// b.Print(false);
-	for(string fen:fenlist)
-	{
-		Board b;
-		Agent a(&b);
-		b.LoadPosition(fen);
-		for(int d=1; d<6; d++)
-		{
-			// cout << "running" << d << endl;
-			U64 ans=0;
-			a.TotalMoves(d,ans);
-			cout << ans << " " << flush;
-		}
-		cout << endl;
-	}
 }

@@ -1,9 +1,36 @@
 #include "agent.h"
 
+void PV_Table::Reset()
+{
+	for(int i=0; i<SIZE; i++)
+	{
+		data[i].move = 0;
+		data[i].posKey = 0;
+	}
+}
+void PV_Table::Insert(U64 posKey, int mv)
+{
+	int idx = posKey % SIZE;
+	data[idx].posKey = posKey;
+	data[idx].move = mv;
+	// cout << "inserted at " << idx << " key: " << posKey << " move: ";
+	// PrintMove(mv);
+}
+int PV_Table::GetMove(U64 key)
+{
+	int idx = key%SIZE;
+	if(data[idx].posKey==key)
+		return data[idx].move;
+	// cout << "nothing found at idx " << idx << "for key: " << key << endl;
+	return 0;
+}
+
 Agent::Agent(Board* _b)
 {
 	b = _b;
 	moveList = vector<Move>(0);
+	table.Reset();
+	priVar = vector<int>(0);
 }
 
 void Agent::PrintList()
@@ -96,7 +123,7 @@ void Agent::AddAllWhitePawnMoves()
 	// }
 }
 
-/*----------------------------------------------------WHITE PAWN--------------------------------------------*/
+/*----------------------------------------------------BLACK PAWN--------------------------------------------*/
 void Agent::AddBlackPawnMove(int from, int to)
 {
 	if(getRankfrom120[from]==RANK_2)
@@ -342,3 +369,210 @@ void Agent::TotalMoves(int depth, U64 &ans)
 	}
 	
 }
+
+int Agent::ParseMove(string s)
+{
+	ASSERT(s.length()>=4);
+	int fr, ff, tr, tf;
+	ff = s[0]-'a';
+	fr = s[1]-'1';
+	tf = s[2] - 'a';
+	tr = s[3]-'1';
+
+	int from = get120fromFR[ff][fr];
+	int to = get120fromFR[tf][tr];
+	char prom = 0;
+	if(s.length()==5)
+		prom = s[4];
+	FindMoves();
+	for(Move m:moveList)
+	{
+		int move = m.move;
+		if(FROMSQ(move)==from && TOSQ(move)==to)
+		{
+			if(prom==0)
+				return move;
+			if(pcName[PROMOTED(move)]==prom)
+				return move;
+		}
+	}
+	return 0;
+}
+
+bool Agent::Repeated()
+{
+	for(int i=b->hist.size()-b->fiftyMove; i<b->hist.size(); i++)
+	{
+		if(b->posKey==b->hist[i].posKey)
+			return true;
+	}
+	return false;
+}
+
+bool Agent::IsValidMove(int move)
+{
+	FindMoves();
+	for(Move m:moveList)
+	{
+		if(m.move==move)
+		{
+			int ret = b->MakeMove(move);
+			if(ret)
+			{
+				b->Undo();
+				return true;
+			}
+		}
+	}
+	return false;
+}
+
+int Agent::SetPV(int depth)
+{
+	priVar = vector<int>(0);
+	int mv = table.GetMove(b->posKey);
+
+	while(mv && priVar.size()<depth)
+	{
+		priVar.push_back(mv);
+		if(!IsValidMove(mv))
+			break;
+		b->MakeMove(mv);
+		mv = table.GetMove(b->posKey);
+	}
+
+	while(b->ply)
+		b->Undo();
+
+	return priVar.size();
+}
+
+void Agent::PrintPV()
+{
+	for(int mv:priVar)
+		PrintMove(mv);
+}
+
+int Agent::EvalPos()
+{
+	int score = b->material[WHITE]-b->material[BLACK];
+	for(int i=0; i<64; i++)
+	{
+		int sq120 = get120from64[i];
+		int pc = b->pieces[sq120];
+		ASSERT(pc>=EMPTY && pc <=bK);
+		if(pc==EMPTY)
+			continue;
+		if(pcCol[pc]==WHITE)
+			score += sqScore[pc][i];
+		else
+			score -= sqScore[pc][i];
+	}
+	if(b->sideToMove==WHITE)
+		return score;
+	return -score;
+}
+
+void Agent::InitSearch()
+{
+	for(int i=0; i<13; i++)
+		for(int j=0; j<120; j++)
+			searchHistory[i][j]=0;
+	
+	for(int i=0; i<2; i++)
+		for(int j=0; j<MAXDEPTH; j++)
+			searchKillers[i][j]=0;
+	
+	table.Reset();
+	b->ply=0;
+
+	sInfo.startTime=clock();
+	sInfo.stopped=0;
+	sInfo.nodes = 0;
+
+	sInfo.fh = 0;
+	sInfo.fhf = 0;
+
+}
+
+void Agent::SearchPos()
+{
+	int bestMove = 0;
+	int bestScore = INT_MIN;
+
+	for(int cd =1; cd<=sInfo.depth; cd++)
+	{
+		bestScore = AlphaBeta(INT_MIN, INT_MAX, cd, 1);
+		SetPV(cd);
+		bestMove = priVar[0];
+
+		cout << "Nodes: " << sInfo.nodes <<  " Depth: " << cd << " Score: " << bestScore << " Move: ";
+		PrintMove(bestMove);
+		PrintPV();
+		cout << "Ordering: " << sInfo.fhf/sInfo.fh << endl;
+	}
+}
+
+int Agent::AlphaBeta(int alpha, int beta, int depth, int doNull)
+{
+	ASSERT(b->Verify());
+	if(depth==0)
+	{
+		sInfo.nodes++;
+		return EvalPos();
+	}
+	if(Repeated()||b->fiftyMove>=100)
+		return 0;
+	
+	if(b->ply>=MAXDEPTH)
+		return EvalPos();
+	
+	FindMoves();
+	int legal=0;
+	int alpha0 = alpha;
+	int beta0 = beta;
+	int score = INT_MIN;
+	int bestmove = 0;
+
+	for(Move m:moveList)
+	{
+		int mv = m.move;
+		if(!b->MakeMove(mv))
+			continue;
+		legal++;
+		score = -AlphaBeta(-beta, -alpha, depth-1, doNull);
+		b->Undo();
+
+		if(score>alpha)
+		{
+			if(score>=beta)
+			{
+				if(legal==1)
+					sInfo.fhf++;
+				sInfo.fh++;
+				return beta;
+			}
+				
+			alpha=score;
+			bestmove = mv;
+		}
+	}
+	if(legal==0)
+	{
+		int kingsq = b->pcList[(b->sideToMove)*6 + wK].PopBit();
+		b->pcList[(b->sideToMove)*6 + wK].SetBit(kingsq);
+		kingsq = get120from64[kingsq];
+
+		if(b->IsAttacked(kingsq, 1^b->sideToMove))
+			return -MateScore + b->ply;
+		return 0;
+	}
+
+	if(alpha!=alpha0)
+		table.Insert(b->posKey, bestmove);
+
+	return alpha;
+}
+
+
+

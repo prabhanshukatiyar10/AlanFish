@@ -6,8 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Dec  9 14:26:03 2021
- 
+# Make data base, printed on Mon Dec 13 11:40:23 2021
 
 # Variables
 
@@ -36,7 +35,7 @@ SHELL = /bin/sh
 # environment
 VSCODE_NLS_CONFIG = {"locale":"en","availableLanguages":{}}
 # environment
-_ = /home/prabkat69420/.vscode-server/bin/ccbaa2d27e38e5afa3e5c21c1c7bef4657064247/node
+_ = /home/prabkat69420/.vscode-server/bin/7db1a2b88f7557e0a43fec75b6ba7e50b3e9f77e/node
 # makefile (from 'makefile', line 1)
 MAKEFILE_LIST :=  makefile
 # 'override' directive
@@ -52,11 +51,11 @@ VSCODE_CWD = /mnt/d/Programs/MSVC
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
-PATH = /home/prabkat69420/.vscode-server/bin/ccbaa2d27e38e5afa3e5c21c1c7bef4657064247/bin:/home/prabkat69420/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/d/msys64/mingw64/bin:/mnt/c/Users/prabh/AppData/Local/Microsoft/WindowsApps:/mnt/d/Programs/MSVC/bin:/mnt/c/Users/prabh/AppData/Local/GitHubDesktop/bin:/snap/bin
+PATH = /home/prabkat69420/.vscode-server/bin/7db1a2b88f7557e0a43fec75b6ba7e50b3e9f77e/bin:/home/prabkat69420/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR:/mnt/d/msys64/mingw64/bin:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Users/prabh/AppData/Local/Microsoft/WindowsApps:/mnt/d/Programs/MSVC/bin:/mnt/c/Users/prabh/AppData/Local/GitHubDesktop/bin:/snap/bin
 # environment
 VSCODE_LOG_STACK = false
 # environment
-VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-5a752c45-3196-42fc-ace7-75e935b9f6c6.sock
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-88006222-930d-4a92-b588-bbd49225cf40.sock
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -70,7 +69,7 @@ PWD = /mnt/e/Chess main
 # default
 .LOADED := 
 # environment
-WSL_INTEROP = /run/WSL/16_interop
+WSL_INTEROP = /run/WSL/14_interop
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/server/remoteExtensionHostProcess
 # environment
@@ -104,7 +103,7 @@ NAME = Predator
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
 # environment
-VSCODE_WSL_EXT_LOCATION = /mnt/c/Users/prabh/.vscode/extensions/ms-vscode-remote.remote-wsl-0.58.5
+VSCODE_WSL_EXT_LOCATION = /mnt/c/Users/prabh/.vscode/extensions/ms-vscode-remote.remote-wsl-0.63.5
 # default
 MAKE_COMMAND := make
 # default
@@ -136,7 +135,7 @@ SUFFIXES :=
 # default
 .INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
 # environment
-VSCODE_INJECT_NODE_MODULE_LOOKUP_PATH = /home/prabkat69420/.vscode-server/bin/ccbaa2d27e38e5afa3e5c21c1c7bef4657064247/remote/node_modules
+VSCODE_INJECT_NODE_MODULE_LOOKUP_PATH = /home/prabkat69420/.vscode-server/bin/7db1a2b88f7557e0a43fec75b6ba7e50b3e9f77e/remote/node_modules
 # default
 .RECIPEPREFIX := 
 # environment
@@ -156,7 +155,7 @@ WSL_DISTRO_NAME = Ubuntu-20.04
 
 # Directories
 
-# . (device 48, inode 7881299347898418): 25 files, no impossibilities.
+# . (device 49, inode 7881299347898418): 25 files, no impossibilities.
 
 # 25 files, no impossibilities in 1 directories.
 
@@ -227,6 +226,6 @@ makefile:
 # strcache performance: lookups = 37 / hit rate = 18%
 # hash-table stats:
 # Load=30/8192=0%, Rehash=0, Collisions=1/37=3%
-# Finished Make data base on Thu Dec  9 14:26:03 2021
+# Finished Make data base on Mon Dec 13 11:40:23 2021
 
  
