@@ -1,35 +1,32 @@
 #include "agent.h"
 
-void PV_Table::Reset()
-{
-	for(int i=0; i<SIZE; i++)
-	{
-		data[i].move = 0;
-		data[i].posKey = 0;
-	}
-}
-void PV_Table::Insert(U64 posKey, int mv)
-{
-	int idx = posKey % SIZE;
-	data[idx].posKey = posKey;
-	data[idx].move = mv;
-	// cout << "inserted at " << idx << " key: " << posKey << " move: ";
-	// PrintMove(mv);
-}
-int PV_Table::GetMove(U64 key)
-{
-	int idx = key%SIZE;
-	if(data[idx].posKey==key)
-		return data[idx].move;
-	// cout << "nothing found at idx " << idx << "for key: " << key << endl;
-	return 0;
-}
+
+// void PV_Table::Reset()
+// {
+// 	data.clear();
+// }
+// void PV_Table::Insert(U64 posKey, int mv)
+// {
+// 	data[posKey] = mv;
+// 	// cout << "inserted at " << idx << " key: " << posKey << " move: ";
+// 	// PrintMove(mv);
+// }
+// int PV_Table::GetMove(U64 key)
+// {
+// 	// int idx = key%SIZE;
+// 	// if(data[idx].posKey==key)
+// 	// 	return data[idx].move;
+// 	if(data.find(key)!=data.end())
+// 		return data[key];
+// 	// cout << "nothing found at idx " << idx << "for key: " << key << endl;
+// 	return 0;
+// }
 
 Agent::Agent(Board* _b)
 {
 	b = _b;
 	moveList = vector<Move>(0);
-	table.Reset();
+	cache = LRU(cache_size);
 	priVar = vector<int>(0);
 }
 
@@ -430,16 +427,19 @@ bool Agent::IsValidMove(int move)
 int Agent::SetPV(int depth)
 {
 	priVar = vector<int>(0);
-	int mv = table.GetMove(b->posKey);
-
+	int mv = cache.get(b->posKey);
+	
 	while(mv && priVar.size()<depth)
 	{
+		
 		if(!IsValidMove(mv))
 			break;
 		priVar.push_back(mv);
 		
 		b->MakeMove(mv);
-		mv = table.GetMove(b->posKey);
+
+		mv = cache.get(b->posKey);
+		
 	}
 
 	while(b->ply)
@@ -450,6 +450,7 @@ int Agent::SetPV(int depth)
 
 void Agent::PrintPV()
 {
+	// cout << "@@@@ " << table.data.size() << endl;
 	for(int mv:priVar)
 		PrintMove(mv);
 }
@@ -484,7 +485,7 @@ void Agent::InitSearch()
 		for(int j=0; j<MAXDEPTH; j++)
 			searchKillers[i][j]=0;
 	
-	table.Reset();
+	cache = LRU(cache_size);
 	b->ply=0;
 
 	sInfo.startTime=clock();
@@ -503,7 +504,9 @@ void Agent::SearchPos()
 	InitSearch();
 	for(int cd =1; cd<=sInfo.depth; cd++)
 	{
+		
 		bestScore = AlphaBeta(INT_MIN+1, INT_MAX, cd, 1);
+		
 		SetPV(cd);
 		bestMove = priVar[0];
 
@@ -571,7 +574,7 @@ int Agent::AlphaBeta(int alpha, int beta, int depth, int doNull)
 
 	if(alpha!=alpha0)
 	{
-		table.Insert(b->posKey, bestmove);
+		cache.put(b->posKey, bestmove);
 	}
 		
 

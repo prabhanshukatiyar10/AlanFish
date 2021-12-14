@@ -1,23 +1,20 @@
 #include "move.h"
 #include "board.h"
+#include "lru.h"
 
 #define MAXDEPTH 64
 
-struct PV_Entry
-{
-	U64 posKey;
-	int move;
+// struct PV_Table
+// {
+// 	// static const int SIZE = 1e5;
+// 	// PV_Entry data[SIZE];
 
-};
-struct PV_Table
-{
-	static const int SIZE = 1e5;
-	PV_Entry data[SIZE];
+// 	unordered_map<U64, int> data;
 
-	void Reset();
-	void Insert(U64 key, int mv);
-	int GetMove(U64 key);
-};
+// 	void Reset();
+// 	void Insert(U64 key, int mv);
+// 	int GetMove(U64 key);
+// };
 
 struct SearchData
 {
@@ -41,9 +38,10 @@ struct SearchData
 class Agent
 {
 public:
+	int cache_size = 1e5;
 	vector<Move> moveList;
 	Board *b;
-	PV_Table table;
+	LRU cache;
 	vector<int> priVar;
 
 	int searchHistory[13][120];

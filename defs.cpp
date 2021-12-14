@@ -78,7 +78,7 @@ void HashInit()
 {
     random_device rd;
     default_random_engine gen(rd());
-    gen.seed(42069);
+    gen.seed(420420);
     uniform_int_distribution<U64> dist(0,0xFFFFFFFFFFFFFFFF);
 
     for(int i=0; i<13; i++)

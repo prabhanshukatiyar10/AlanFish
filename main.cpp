@@ -24,7 +24,7 @@ int main()
 
 	Board b;
 	Agent a(&b);
-	b.LoadPosition(m7_1);
+	b.LoadPosition(m3_1);
 	while(true)
 	{
 		b.Print(true);
@@ -39,19 +39,7 @@ int main()
 			a.sInfo.depth = 8;
 			a.SearchPos();
 		}
-		else
-		{
-			int mv = a.ParseMove(s);
-			if(mv)
-			{
-				a.table.Insert(b.posKey, mv);
-				b.MakeMove(mv);
-				
-			}
-				
-			else
-				cout << "invalid move" << endl;
-		}
+
 		
 	}
 
