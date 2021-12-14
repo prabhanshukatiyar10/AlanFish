@@ -444,7 +444,7 @@ int Agent::SetPV(int depth)
 
 	while(b->ply)
 		b->Undo();
-
+	// cout << "got size of " << priVar.size() << endl;
 	return priVar.size();
 }
 
@@ -461,7 +461,7 @@ int Agent::EvalPos()
 	{
 		int sq120 = get120from64[i];
 		int pc = b->pieces[sq120];
-		ASSERT(pc>=EMPTY && pc <=bK);
+		//ASSERT(pc>=EMPTY && pc <=bK);
 		if(pc==EMPTY)
 			continue;
 		if(pcCol[pc]==WHITE)
@@ -516,7 +516,7 @@ void Agent::SearchPos()
 
 int Agent::AlphaBeta(int alpha, int beta, int depth, int doNull)
 {
-	ASSERT(b->Verify());
+	//ASSERT(b->Verify());
 	if(depth==0)
 	{
 		sInfo.nodes++;

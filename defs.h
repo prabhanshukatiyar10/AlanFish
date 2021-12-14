@@ -3,12 +3,12 @@
 #ifndef DEFS_H
 #define DEFS_H
 
-#define DEBUG 
+// #define DEBUG 
 
 #ifndef DEBUG
 #define ASSERT(n)
 #else
-#define ASSERT(n) \
+#define  ASSERT(n) \
 if(!(n)) { \
 printf("%s - Failed",#n); \
 printf("On %s ",__DATE__); \
