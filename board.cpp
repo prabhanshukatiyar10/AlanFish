@@ -79,13 +79,13 @@ void Board::ResetBoard()
 
 	posKey = 0;
 
-	for(int i=0; i<13; i++)
-		pcCount[i]=0;
+	// for(int i=0; i<13; i++)
+	// 	pcCount[i]=0;
 	for(int i=0; i<2; i++)
 	{
-		bigCount[i]=0;
-		majCount[i]=0;
-		minCount[i]=0;
+		// bigCount[i]=0;
+		// majCount[i]=0;
+		// minCount[i]=0;
 		material[i]=0;
 	}
 
@@ -205,15 +205,15 @@ void Board::UpdateCount()
 		if(pieces[i]==EMPTY || pieces[i]==OUT)
 			continue;
 		int pc = pieces[i];
-		pcCount[pc]++;
+		// pcCount[pc]++;
 		pcList[pc].SetBit(get64from120[i]);
 		int col = pcCol[pc];
-		if(isBig[pc])
-			bigCount[col]++;
-		if(isMajor[pc])
-			majCount[col]++;
-		if(isMinor[pc])
-			minCount[col]++;
+		// if(isBig[pc])
+		// 	bigCount[col]++;
+		// if(isMajor[pc])
+		// 	majCount[col]++;
+		// if(isMinor[pc])
+		// 	minCount[col]++;
 
 		material[col] += pcVal[pc];
 
@@ -244,7 +244,7 @@ void Board::Print(bool onlyboard)
 	cout << endl;
 	for(int i=1; i<13; i++)
 	{
-		cout << pcName[i] << ": " << pcCount[i] << "[ ";
+		cout << pcName[i] << ": " << "[ ";
 		// for(int x:pieceList[i])
 		// 	cout << getNamefrom120[x] << " ";
 		U64 t_info = pcList[i].info;
@@ -259,7 +259,7 @@ void Board::Print(bool onlyboard)
 	cout << endl;
 	for(int i=0; i<2; i++)
 	{
-		cout << bigCount[i] << " " << majCount[i] << " " << minCount[i] << " " << material[i] << endl;
+		cout << material[i] << endl;
 	}
 	cout << "To Play: " << sideToMove << endl;
 	cout << "en Pas: " << getNamefrom120[enPas] << endl;
@@ -327,15 +327,15 @@ bool Board::Verify()
 	// check count
 	for(int i=1; i<13; i++)
 	{
-		ASSERT(t_pcCount[i]==pcCount[i]);
+		// ASSERT(t_pcCount[i]==pcCount[i]);
 		// ASSERT(t_pcCount[i]==pieceList[i].size());
 	}
 	
 	for(int i=0; i<2; i++)
 	{
-		ASSERT(t_bigCount[i]==bigCount[i]);
-		ASSERT(t_majCount[i]==majCount[i]);
-		ASSERT(t_minCount[i]==minCount[i]);
+		// ASSERT(t_bigCount[i]==bigCount[i]);
+		// ASSERT(t_majCount[i]==majCount[i]);
+		// ASSERT(t_minCount[i]==minCount[i]);
 		ASSERT(t_material[i]==material[i]);
 	}
 	// ASSERT(t_pcCount[bP]==pawns[BLACK].CountBits());
@@ -462,22 +462,21 @@ void Board::ClearPiece(int sq)
 	// pieceList[pc].erase(sq);
 	pcList[pc].ClearBit(get64from120[sq]);
 	material[col] -= pcVal[pc];
-	pcCount[pc]--;
+	// pcCount[pc]--;
 
-	if(isBig[pc])
-		bigCount[col]--;
-	if(isMajor[pc])
-		majCount[col]--;
-	if(isMinor[pc])
-		minCount[col]--;
+	// if(isBig[pc])
+	// 	bigCount[col]--;
+	// if(isMajor[pc])
+	// 	majCount[col]--;
+	// if(isMinor[pc])
+	// 	minCount[col]--;
 
 	if(isPawn[pc])
 	{
 		pawns.ClearBit(get64from120[sq]);
 		
 	}
-	U64 cur = posKey;
-	ASSERT(cur==SetHash());
+
 
 }
 void Board::AddPiece(int pc, int sq)
@@ -490,14 +489,14 @@ void Board::AddPiece(int pc, int sq)
 	pcList[pc].SetBit(get64from120[sq]);
 
 	int col = pcCol[pc];
-	pcCount[pc]++;
+	// pcCount[pc]++;
 
-	if(isBig[pc])
-		bigCount[col]++;
-	if(isMajor[pc])
-		majCount[col]++;
-	if(isMinor[pc])
-		minCount[col]++;
+	// if(isBig[pc])
+	// 	bigCount[col]++;
+	// if(isMajor[pc])
+	// 	majCount[col]++;
+	// if(isMinor[pc])
+	// 	minCount[col]++;
 
 	material[col] += pcVal[pc];
 
@@ -505,8 +504,6 @@ void Board::AddPiece(int pc, int sq)
 	{
 		pawns.SetBit(get64from120[sq]);
 	}
-	U64 cur = posKey;
-	ASSERT(cur==SetHash());
 }
 void Board::MovePiece(int from, int to)
 {
@@ -533,8 +530,6 @@ void Board::MovePiece(int from, int to)
 	HashPc(pc, from);
 	HashPc(pc, to);
 
-	U64 cur = posKey;
-	ASSERT(posKey==SetHash());
 }
 
 void Board::Undo()

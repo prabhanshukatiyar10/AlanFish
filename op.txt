@@ -1,472 +1,126 @@
-r n b q k b n r 
-p p p p p p p p 
-. . . . . . . . 
-. . . . . . . . 
-. . . . . . . . 
-. . . . . . . . 
-P P P P P P P P 
-R N B Q K B N R 
-
-inserted at 44468 key: 6467694776503544468 move: From D2 to D4 capturing . prom to . en pas 0 prom 0 pawn start 1 castle 0 capt 0
-Nodes: 20 Depth: 1 Score: 30 Move: From D2 to D4 capturing . prom to . en pas 0 prom 0 pawn start 1 castle 0 capt 0
-From D2 to D4 capturing . prom to . en pas 0 prom 0 pawn start 1 castle 0 capt 0
-Ordering: -nan
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Nodes: 40 Depth: 2 Score: -2147483648 Move: From D2 to D4 capturing . prom to . en pas 0 prom 0 pawn start 1 castle 0 capt 0
-From D2 to D4 capturing . prom to . en pas 0 prom 0 pawn start 1 castle 0 capt 0
-Ordering: 1
-inserted at 77358 key: 3417508429916777358 move: From D2 to D4 capturing . prom to . en pas 0 prom 0 pawn start 1 castle 0 capt 0
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-inserted at 56414 key: 10791593063538156414 move: From D2 to D4 capturing . prom to . en pas 0 prom 0 pawn start 1 castle 0 capt 0
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-inserted at 71230 key: 3493252179669871230 move: From D2 to D4 capturing . prom to . en pas 0 prom 0 pawn start 1 castle 0 capt 0
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-inserted at 10636 key: 61197020044110636 move: From D2 to D4 capturing . prom to . en pas 0 prom 0 pawn start 1 castle 0 capt 0
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-inserted at 40409 key: 12342910708129140409 move: From D2 to D4 capturing . prom to . en pas 0 prom 0 pawn start 1 castle 0 capt 0
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-inserted at 14024 key: 39303726166314024 move: From D2 to D4 capturing . prom to . en pas 0 prom 0 pawn start 1 castle 0 capt 0
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-inserted at 98812 key: 18100582673794998812 move: From E2 to E4 capturing . prom to . en pas 0 prom 0 pawn start 1 castle 0 capt 0
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-inserted at 96066 key: 6340675962414296066 move: From E2 to E4 capturing . prom to . en pas 0 prom 0 pawn start 1 castle 0 capt 0
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-inserted at 50925 key: 11688327660158850925 move: From F1 to A6 capturing p prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 1
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-inserted at 44089 key: 2232937284364644089 move: From F1 to A6 capturing p prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 1
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-inserted at 40312 key: 13217498665187540312 move: From D2 to D4 capturing . prom to . en pas 0 prom 0 pawn start 1 castle 0 capt 0
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-inserted at 7111 key: 11016585992239907111 move: From D2 to D4 capturing . prom to . en pas 0 prom 0 pawn start 1 castle 0 capt 0
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-inserted at 39676 key: 12746337687433939676 move: From D2 to D4 capturing . prom to . en pas 0 prom 0 pawn start 1 castle 0 capt 0
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-inserted at 37358 key: 2185377838037037358 move: From D2 to D4 capturing . prom to . en pas 0 prom 0 pawn start 1 castle 0 capt 0
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-inserted at 54462 key: 8581654407193654462 move: From D2 to D4 capturing . prom to . en pas 0 prom 0 pawn start 1 castle 0 capt 0
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-inserted at 34912 key: 16963186813954534912 move: From D2 to D4 capturing . prom to . en pas 0 prom 0 pawn start 1 castle 0 capt 0
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-inserted at 9274 key: 2017277502678409274 move: From D2 to D4 capturing . prom to . en pas 0 prom 0 pawn start 1 castle 0 capt 0
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-inserted at 23371 key: 17845144821879423371 move: From D2 to D4 capturing . prom to . en pas 0 prom 0 pawn start 1 castle 0 capt 0
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-inserted at 27457 key: 9432103164636427457 move: From D2 to D4 capturing . prom to . en pas 0 prom 0 pawn start 1 castle 0 capt 0
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-inserted at 80401 key: 13934972590933180401 move: From D2 to D4 capturing . prom to . en pas 0 prom 0 pawn start 1 castle 0 capt 0
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Nodes: 485 Depth: 3 Score: -2147483648 Move: From D2 to D4 capturing . prom to . en pas 0 prom 0 pawn start 1 castle 0 capt 0
-From D2 to D4 capturing . prom to . en pas 0 prom 0 pawn start 1 castle 0 capt 0
-Ordering: 1
-Returned beta: From A6 to A5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A6 to A5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A6 to A5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A6 to A5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A6 to A5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A6 to A5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A6 to A5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A6 to A5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A6 to A5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A6 to A5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A6 to A5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A6 to A5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A6 to A5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A6 to A5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A6 to A5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A6 to A5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A6 to A5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A6 to A5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A6 to A5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A5 to A4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A5 to A4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A5 to A4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A5 to A4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A5 to A4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A5 to A4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A5 to A4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A5 to A4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A5 to A4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A5 to A4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A5 to A4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A5 to A4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A5 to A4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A5 to A4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From B7 to B6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A5 to A4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A5 to A4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A5 to A4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A5 to A4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From B6 to B5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From B6 to B5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From B6 to B5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From B6 to B5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From B6 to B5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From B6 to B5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From B6 to B5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From B6 to B5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From B6 to B5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From B6 to B5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From B6 to B5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From B6 to B5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From B6 to B5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From B6 to B5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From B6 to B5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From B6 to B5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From B6 to B5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From B6 to B5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From B6 to B5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From B5 to B4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From B5 to B4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From B5 to B4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From B5 to B4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From B5 to B4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From B5 to B4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From B5 to B4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From B5 to B4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From B5 to B4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From B5 to B4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From B5 to B4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From B5 to B4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From B5 to B4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From B5 to B4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From B5 to B4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From B5 to B4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From B5 to B4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From B5 to B4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From C6 to C5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From C6 to C5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From C6 to C5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From C6 to C5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From C6 to C5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From C6 to C5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From C6 to C5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From C6 to C5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From C6 to C5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From C6 to C5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From C6 to C5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From C6 to C5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From C6 to C5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From C6 to C5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From C6 to C5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From C6 to C5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From C6 to C5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From C6 to C5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From C6 to C5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From C5 to C4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From C5 to C4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From C5 to C4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From C5 to C4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From C5 to C4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From C5 to C4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From C5 to C4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From C5 to C4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From C5 to C4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From C5 to C4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From C5 to C4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From C5 to C4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From C5 to C4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From C5 to C4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From C5 to C4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From C5 to C4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From C5 to C4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From C5 to C4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From D6 to D5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From D6 to D5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From D6 to D5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From D6 to D5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From D6 to D5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From D6 to D5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From D6 to D5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From D6 to D5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From D6 to D5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From D6 to D5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From D6 to D5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From D6 to D5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From D6 to D5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From D6 to D5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From D6 to D5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From D6 to D5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From D6 to D5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From D6 to D5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From D6 to D5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From D5 to D4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From D5 to D4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From D5 to D4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From D5 to D4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From D5 to D4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From D5 to D4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From D5 to D4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From D5 to D4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From D5 to D4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From D5 to D4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From D5 to D4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From D5 to D4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From D5 to D4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From D5 to D4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From D5 to D4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From D5 to D4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From D5 to D4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From D5 to D4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From E6 to E5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From E6 to E5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From E6 to E5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From E6 to E5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From E6 to E5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From E6 to E5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From E6 to E5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From E6 to E5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From E6 to E5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From E6 to E5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From E6 to E5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From E6 to E5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From E6 to E5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From E6 to E5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From E6 to E5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From E6 to E5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From E6 to E5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From E6 to E5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From E6 to E5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From E5 to E4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From E5 to E4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From E5 to E4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From E5 to E4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From E5 to E4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From E5 to E4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From E5 to E4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From E5 to E4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From E5 to E4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From E5 to E4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From E5 to E4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From E5 to E4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From E5 to E4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From E5 to E4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From E5 to E4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From E5 to E4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From E5 to E4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From E5 to E4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From F6 to F5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From F6 to F5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From F6 to F5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From F6 to F5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From F6 to F5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From F6 to F5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From F6 to F5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From F6 to F5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From F6 to F5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From F6 to F5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From F6 to F5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From F6 to F5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From F6 to F5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From F6 to F5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From F6 to F5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From F6 to F5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From F6 to F5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From F6 to F5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From F6 to F5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From F5 to F4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From F5 to F4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From F5 to F4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From F5 to F4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From F5 to F4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From F5 to F4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From F5 to F4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From F5 to F4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From F5 to F4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From F5 to F4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From F5 to F4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From F5 to F4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From F5 to F4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From F5 to F4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From F5 to F4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From F5 to F4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From F5 to F4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From F5 to F4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From G6 to G5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From G6 to G5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From G6 to G5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From G6 to G5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From G6 to G5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From G6 to G5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From G6 to G5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From G6 to G5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From G6 to G5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From G6 to G5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From G6 to G5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From G6 to G5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From G6 to G5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From G6 to G5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From G6 to G5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From G6 to G5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From G6 to G5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From G6 to G5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From G6 to G5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From G5 to G4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From G5 to G4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From G5 to G4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From G5 to G4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From G5 to G4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From G5 to G4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From G5 to G4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From G5 to G4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From G5 to G4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From G5 to G4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From G5 to G4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From G5 to G4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From G5 to G4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From G5 to G4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From G5 to G4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From G5 to G4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From G5 to G4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From G5 to G4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From H6 to H5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From H6 to H5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From H6 to H5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From H6 to H5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From H6 to H5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From H6 to H5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From H6 to H5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From H6 to H5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From H6 to H5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From H6 to H5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From H6 to H5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From H6 to H5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From H6 to H5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From H6 to H5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From H6 to H5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From H6 to H5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From H6 to H5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From H6 to H5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From H6 to H5 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From H5 to H4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From H5 to H4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From H5 to H4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From H5 to H4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From H5 to H4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From H5 to H4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From H5 to H4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From H5 to H4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From H5 to H4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From H5 to H4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From H5 to H4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From H5 to H4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From H5 to H4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From H5 to H4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From H5 to H4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From H5 to H4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From H5 to H4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From H5 to H4 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From B7 to B6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From B7 to B6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From B7 to B6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From B7 to B6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From B7 to B6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From B7 to B6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From B7 to B6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From B7 to B6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From B7 to B6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From B7 to B6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From B7 to B6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From B7 to B6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From B7 to B6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From B7 to B6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From B7 to B6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From B7 to B6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From B7 to B6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From B7 to B6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From B7 to B6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A7 to A6 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Returned beta: From A2 to A3 capturing . prom to . en pas 0 prom 0 pawn start 0 castle 0 capt 0
-Nodes: 865 Depth: 4 Score: 2147483647 Move: From D2 to D4 capturing . prom to . en pas 0 prom 0 pawn start 1 castle 0 capt 0
-From D2 to D4 capturing . prom to . en pas 0 prom 0 pawn start 1 castle 0 capt 0
-Ordering: 1
-r n b q k b n r 
-p p p p p p p p 
-. . . . . . . . 
-. . . . . . . . 
-. . . . . . . . 
-. . . . . . . . 
-P P P P P P P P 
-R N B Q K B N R 
-
+20 400 8902 197281 4865609 
+48 2039 97862 4085603 193690690 
+15 66 1197 7059 133987 
+16 71 1287 7626 145232 
+5 75 459 8290 47635 
+5 80 493 8897 52710 
+26 112 3189 17945 532933 
+5 130 782 22180 118882 
+12 38 564 2219 37735 
+15 65 1018 4573 80619 
+3 32 134 2073 10485 
+4 49 243 3991 20780 
+26 568 13744 314346 7594526 
+25 567 14095 328965 8153719 
+25 548 13502 312835 7736373 
+25 547 13579 316214 7878456 
+26 583 14252 334705 8198901 
+25 560 13592 317324 7710115 
+25 560 13607 320792 7848606 
+5 75 459 8290 47635 
+5 80 493 8897 52710 
+15 66 1197 7059 133987 
+16 71 1287 7626 145232 
+5 130 782 22180 118882 
+26 112 3189 17945 532933 
+3 32 134 2073 10485 
+4 49 243 3991 20780 
+12 38 564 2219 37735 
+15 65 1018 4573 80619 
+26 568 13744 314346 7594526 
+26 583 14252 334705 8198901 
+25 560 13592 317324 7710115 
+25 560 13607 320792 7848606 
+25 567 14095 328965 8153719 
+25 548 13502 312835 7736373 
+25 547 13579 316214 7878456 
+14 195 2760 38675 570726 
+11 156 1636 20534 223507 
+19 289 4442 73584 1198299 
+3 51 345 5301 38348 
+17 54 835 5910 92250 
+15 193 2816 40039 582642 
+16 180 2290 24640 288141 
+4 68 1118 16199 281190 
+17 54 835 5910 92250 
+3 51 345 5301 38348 
+17 278 4607 76778 1320507 
+21 316 5744 93338 1713368 
+21 144 3242 32955 787524 
+7 143 1416 31787 310862 
+6 106 1829 31151 530585 
+17 309 5133 93603 1591064 
+7 143 1416 31787 310862 
+21 144 3242 32955 787524 
+19 275 5300 104342 2161211 
+36 1027 29215 771461 20506480 
+19 275 5300 104342 2161211 
+36 1027 29227 771368 20521342 
+2 36 143 3637 14893 
+2 36 143 3637 14893 
+6 35 495 8349 166741 
+22 43 1015 4167 105749 
+2 36 143 3637 14893 
+6 35 495 8349 166741 
+3 7 43 199 1347 
+3 7 43 199 1347 
+1 3 12 80 342 
+1 3 12 80 342 
+7 35 210 1091 7028 
+1 3 12 80 342 
+1 3 12 80 342 
+3 7 43 199 1347 
+3 7 43 199 1347 
+5 35 182 1091 5408 
+2 8 44 282 1814 
+2 8 44 282 1814 
+3 9 57 360 1969 
+3 9 57 360 1969 
+5 25 180 1294 8296 
+8 61 483 3213 23599 
+8 61 411 3213 21637 
+4 15 90 534 3450 
+3 9 57 360 1969 
+3 9 57 360 1969 
+5 25 180 1294 8296 
+8 61 411 3213 21637 
+8 61 483 3213 23599 
+4 15 89 537 3309 
+4 19 117 720 4661 
+5 19 116 716 4786 
+5 22 139 877 6112 
+4 16 101 637 4354 
+5 22 139 877 6112 
+4 16 101 637 4354 
+3 15 84 573 3013 
+4 16 101 637 4271 
+5 19 117 720 5014 
+4 19 117 712 4658 
+5 22 139 877 6112 
+4 16 101 637 4354 
+5 22 139 877 6112 
+4 16 101 637 4354 
+5 15 102 569 4337 
+4 16 101 637 4271 
+5 22 139 877 6112 
+4 16 101 637 4354 
+5 22 139 877 6112 
+4 16 101 637 4354 
+5 25 161 1035 7574 
+5 25 161 1035 7574 
+7 49 378 2902 24122 
+5 22 139 877 6112 
+4 16 101 637 4354 
+5 22 139 877 6112 
+4 16 101 637 4354 
+5 25 161 1035 7574 
+5 25 161 1035 7574 
+7 49 378 2902 24122 
+11 97 887 8048 90606 
+24 421 7421 124608 2193768 
+18 270 4699 79355 1533145 
+24 496 9483 182838 3605103 
+11 97 887 8048 90606 
+24 421 7421 124608 2193768 
+18 270 4699 79355 1533145 
+24 496 9483 182838 3605103 

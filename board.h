@@ -34,10 +34,6 @@ public:
 
     U64 posKey;
 
-    int pcCount[13];
-    int bigCount[2];
-    int majCount[2];
-    int minCount[2];
     int material[2];
 
     BitBoard pcList[13];
