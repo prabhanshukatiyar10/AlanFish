@@ -11,9 +11,18 @@ struct History
 
 };
 
-class Board
+struct Board
 {
-    
+private:
+    void HashPc(int pc, int sq);
+    void HashCas();
+    void HashEP();
+    void HashSide();
+    void UpdateCount();
+    void AddPiece(int pc, int sq);
+    void ClearPiece(int sq);
+    void MovePiece(int from, int to);
+
 public:
     int pieces[120];
     BitBoard pawns;
@@ -40,15 +49,12 @@ public:
     bool OnBoard(int sq);
     bool NonEmpty(int sq);
 
-    void HashPc(int pc, int sq);
-    void HashCas();
-    void HashEP();
-    void HashSide();
+    
 
     U64 SetHash();
 
     void ResetBoard();
-    void UpdateCount();
+    
 
     void LoadPosition(string fen);
     void Print(bool onlyboard);
@@ -56,10 +62,6 @@ public:
 
     int IsAttacked(int sq120, int side);
     void PrintMap();
-
-    void AddPiece(int pc, int sq);
-    void ClearPiece(int sq);
-    void MovePiece(int from, int to);
 
     void Undo();
     bool MakeMove(int move);

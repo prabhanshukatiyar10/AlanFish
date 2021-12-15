@@ -1,27 +1,5 @@
 #include "agent.h"
 
-
-// void PV_Table::Reset()
-// {
-// 	data.clear();
-// }
-// void PV_Table::Insert(U64 posKey, int mv)
-// {
-// 	data[posKey] = mv;
-// 	// cout << "inserted at " << idx << " key: " << posKey << " move: ";
-// 	// PrintMove(mv);
-// }
-// int PV_Table::GetMove(U64 key)
-// {
-// 	// int idx = key%SIZE;
-// 	// if(data[idx].posKey==key)
-// 	// 	return data[idx].move;
-// 	if(data.find(key)!=data.end())
-// 		return data[key];
-// 	// cout << "nothing found at idx " << idx << "for key: " << key << endl;
-// 	return 0;
-// }
-
 Agent::Agent(Board* _b)
 {
 	b = _b;
@@ -52,14 +30,14 @@ void Agent::AddCaptureMove(int move)
 {
 	Move m;
 	m.move = move;
-	m.score = 0;
+	m.score = pcVal[b->pieces[TOSQ(move)]] - pcVal[b->pieces[FROMSQ(move)]]/10;
 	moveList.push_back(m);
 }
 void Agent::AddEnPassantMove(int move)
 {
 	Move m;
 	m.move = move;
-	m.score = 0;
+	m.score = 90;
 	moveList.push_back(m);
 }
 
@@ -120,6 +98,24 @@ void Agent::AddAllWhitePawnMoves()
 	// }
 }
 
+void Agent::AddAllWhitePawnCaps()
+{
+	U64 t_info = b->pcList[wP].info;
+	while(b->pcList[wP].info)
+	{
+		int sq120 = get120from64[b->pcList[wP].PopBit()];
+
+		if(pcCol[b->pieces[sq120+9]]==BLACK)
+			AddWhitePawnCapMove(sq120, sq120+9, b->pieces[sq120+9]);
+		if(pcCol[b->pieces[sq120+11]]==BLACK)
+			AddWhitePawnCapMove(sq120, sq120+11, b->pieces[sq120+11]);
+
+		if((sq120+9)==b->enPas || (sq120+11)==b->enPas)
+			AddEnPassantMove(MOVE(sq120, b->enPas, bP, EMPTY, MFLAGEP));
+		}
+	b->pcList[wP].info = t_info;
+}
+
 /*----------------------------------------------------BLACK PAWN--------------------------------------------*/
 void Agent::AddBlackPawnMove(int from, int to)
 {
@@ -173,6 +169,28 @@ void Agent::AddAllBlackPawnMoves()
 	// {
 		
 	// }
+}
+
+
+
+void Agent::AddAllBlackPawnCaps()
+{
+	U64 t_info = b->pcList[bP].info;
+	while(b->pcList[bP].info)
+	{
+		int sq120 = get120from64[b->pcList[bP].PopBit()];
+
+
+		if(pcCol[b->pieces[sq120-9]]==WHITE)
+			AddBlackPawnCapMove(sq120, sq120-9, b->pieces[sq120-9]);
+		if(pcCol[b->pieces[sq120-11]]==WHITE)
+			AddBlackPawnCapMove(sq120, sq120-11, b->pieces[sq120-11]);
+
+
+		if((sq120-9)==b->enPas || (sq120-11)==b->enPas)
+			AddEnPassantMove(MOVE(sq120, b->enPas, wP, EMPTY, MFLAGEP));
+		}
+	b->pcList[bP].info = t_info;
 }
 
 
@@ -334,8 +352,91 @@ vector<Move> Agent::FindMoves()
 	}
 	AddSlidingMoves();
 	AddNonSlidingMoves();
-	
+	sort(moveList.begin(), moveList.end());
 	return moveList;
+}
+
+vector<Move> Agent::FindCaptures()
+{
+	moveList = vector<Move>(0);
+	if(b->sideToMove==WHITE)
+		AddAllWhitePawnCaps();
+	else
+		AddAllBlackPawnCaps();
+
+	vector<int> slp = {wB, wR, wQ};
+	for(int i=0; i<3; i++)
+		slp[i] += 6*b->sideToMove;
+
+	for(int pc:slp)
+	{
+		vector<int> dirList;
+		if(isBishopQueen[pc])
+			dirList.push_back(Bishop);
+		if(isRookQueen[pc])
+			dirList.push_back(Rook);
+		U64 t_info = b->pcList[pc].info;
+		while(b->pcList[pc].info)
+		{
+			int sq = get120from64[b->pcList[pc].PopBit()];
+			for(int dL:dirList)
+			{
+				for(int dir:directions[dL])
+				{
+					int cursq = sq;
+					while(b->pieces[cursq+dir]!=OUT)
+					{
+						cursq+=dir;
+						if(b->pieces[cursq]==EMPTY)
+							{}
+						else if(pcCol[b->pieces[cursq]]==b->sideToMove)
+							break;
+						else
+						{
+							AddCaptureMove(MOVE(sq, cursq, b->pieces[cursq], EMPTY, 0));
+							break;
+						}
+					}
+				}
+			}
+		}
+		b->pcList[pc].info = t_info;
+	}
+
+	vector<int> nsp = {wN, wK};
+	for(int i=0; i<2; i++)
+		nsp[i]+= b->sideToMove*6;
+
+	for(int pc:nsp)
+	{
+		int dir;
+		if(isKnight[pc])
+			dir = Knight;
+		else
+			dir = King;
+
+		U64 t_info = b->pcList[pc].info;
+		while(b->pcList[pc].info)
+		{
+			int sq = get120from64[b->pcList[pc].PopBit()];
+			for(int d:directions[dir])
+			{
+				int curpc = b->pieces[sq+d];
+				if(curpc==OUT)
+					continue;
+				if(curpc==EMPTY)
+					{}
+				else if(pcCol[curpc]==b->sideToMove)
+					continue;
+				else
+					AddCaptureMove(MOVE(sq,sq+d,b->pieces[sq+d],EMPTY,0));
+
+			}
+		}
+		b->pcList[pc].info = t_info;
+	}
+	return moveList;
+	
 }
 
 void Agent::TotalMoves(int depth, U64 &ans)
@@ -395,6 +496,11 @@ int Agent::ParseMove(string s)
 	}
 	return 0;
 }
+
+/*---------------------------------------------------RL-BEGINS-------------------------------------------*/
+/*---------------------------------------------------RL-BEGINS-------------------------------------------*/
+/*---------------------------------------------------RL-BEGINS-------------------------------------------*/
+/*---------------------------------------------------RL-BEGINS-------------------------------------------*/
 
 bool Agent::Repeated()
 {
@@ -504,8 +610,10 @@ void Agent::SearchPos()
 	InitSearch();
 	for(int cd =1; cd<=sInfo.depth; cd++)
 	{
+		if(bestScore<MateScore-cd)
+			bestScore = AlphaBeta(INT_MIN+1, INT_MAX, cd, 1);
 		
-		bestScore = AlphaBeta(INT_MIN+1, INT_MAX, cd, 1);
+
 		
 		SetPV(cd);
 		bestMove = priVar[0];
@@ -522,12 +630,11 @@ int Agent::AlphaBeta(int alpha, int beta, int depth, int doNull)
 	//ASSERT(b->Verify());
 	if(depth==0)
 	{
-		sInfo.nodes++;
-		return EvalPos();
+		return Quiescence(alpha, beta);
 	}
 	if(Repeated()||b->fiftyMove>=100)
 		return 0;
-	
+		
 	if(b->ply>=MAXDEPTH)
 		return EvalPos();
 	
@@ -579,6 +686,68 @@ int Agent::AlphaBeta(int alpha, int beta, int depth, int doNull)
 		
 
 	return alpha;
+}
+
+int Agent::Quiescence(int alpha, int beta)
+{
+	ASSERT(b->Verify());
+	sInfo.nodes++;
+	if(Repeated()||b->fiftyMove>=100)
+		return 0;
+	
+	if(b->ply>=MAXDEPTH)
+		return EvalPos();
+
+	int score = EvalPos();
+
+	if(score>=beta)
+		return beta;
+	if(score>alpha)
+		alpha = score;
+
+	
+
+
+	vector<Move> mL = FindCaptures();
+	int legal=0;
+	int alpha0 = alpha;
+	int bestmove = 0;
+	score = INT_MIN+1;
+
+	for(Move m:mL)
+	{
+		int mv = m.move;
+		if(!b->MakeMove(mv))
+			continue;
+		legal++;
+		score = -Quiescence(-beta, -alpha);
+		b->Undo();
+
+		if(score>alpha)
+		{
+			if(score>=beta)
+			{
+				if(legal==1)
+					sInfo.fhf++;
+				sInfo.fh++;
+				return beta;
+			}
+			// cout << "$$$$ ";
+			// PrintMove(mv);
+			alpha=score;
+			bestmove = mv;
+		}
+	}
+
+
+	if(alpha!=alpha0)
+	{
+		cache.put(b->posKey, bestmove);
+	}
+		
+
+	return alpha;
+
 }
 
 

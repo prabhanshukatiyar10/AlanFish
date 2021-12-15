@@ -4,17 +4,6 @@
 
 #define MAXDEPTH 64
 
-// struct PV_Table
-// {
-// 	// static const int SIZE = 1e5;
-// 	// PV_Entry data[SIZE];
-
-// 	unordered_map<U64, int> data;
-
-// 	void Reset();
-// 	void Insert(U64 key, int mv);
-// 	int GetMove(U64 key);
-// };
 
 struct SearchData
 {
@@ -37,13 +26,13 @@ struct SearchData
 };
 class Agent
 {
-public:
+
 	int cache_size = 1e5;
 	vector<Move> moveList;
 	Board *b;
 	LRU cache;
 	vector<int> priVar;
-
+public:
 	int searchHistory[13][120];
 	int searchKillers[2][MAXDEPTH];
 
@@ -61,10 +50,12 @@ public:
 	void AddWhitePawnMove(int from, int to);
 	void AddWhitePawnCapMove(int from, int to, int capt);
 	void AddAllWhitePawnMoves();
+	void AddAllWhitePawnCaps();
 
 	void AddBlackPawnMove(int from, int to);
 	void AddBlackPawnCapMove(int from, int to, int capt);
 	void AddAllBlackPawnMoves();
+	void AddAllBlackPawnCaps();
 
 	void AddSlidingMoves();
 	void AddNonSlidingMoves();
@@ -73,6 +64,7 @@ public:
 	void AddBlackCastles();
 
 	vector<Move> FindMoves();
+	vector<Move> FindCaptures();
 
 	void TotalMoves(int depth, U64 &ans);
 	int ParseMove(string s);

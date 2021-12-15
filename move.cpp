@@ -2,7 +2,7 @@
 
 bool Move::operator<(const Move &m)
 {
-    return (move < m.move);
+    return (score > m.score);
 }
 
 void PrintMove(int move)

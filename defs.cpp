@@ -97,7 +97,7 @@ void HashInit()
 
 void InitSqScore()
 {
-    MateScore = 30000;
+    MateScore = 3e6;
     sqScore = vector<vector<int>>(13);
 
     sqScore[wP] = { 
