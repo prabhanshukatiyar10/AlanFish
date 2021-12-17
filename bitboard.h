@@ -1,4 +1,7 @@
 #include "defs.h"
+#include <iostream>
+using namespace std;
+
 class BitBoard
 {
      const int BitTable[64] = {

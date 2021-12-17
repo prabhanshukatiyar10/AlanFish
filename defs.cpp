@@ -1,7 +1,7 @@
 #include "defs.h"
-bool isBig[14]   =     {0,0,1,1,1,1,1,0,1,1,1,1,1,0};
-bool isMajor[14] =     {0,0,0,0,1,1,1,0,0,0,1,1,1,0};
-bool isMinor[14] =     {0,0,1,1,0,0,0,0,1,1,0,0,0,0};
+// bool isBig[14]   =     {0,0,1,1,1,1,1,0,1,1,1,1,1,0};
+// bool isMajor[14] =     {0,0,0,0,1,1,1,0,0,0,1,1,1,0};
+// bool isMinor[14] =     {0,0,1,1,0,0,0,0,1,1,0,0,0,0};
 
 bool isPawn[14]  =     {0,1,0,0,0,0,0,1,0,0,0,0,0,0};
 bool isKnight[14]=     {0,0,1,0,0,0,0,0,1,0,0,0,0,0};
@@ -56,7 +56,7 @@ void Init()
             get64from120[sq120] = sq;
             get120fromFR[f][r] = sq120;
             string name = "";
-            name += char('A'+f);
+            name += char('a'+f);
             name += char('1'+r);
             getNamefrom120[sq120] = name;
             getFilefrom120[sq120] = f;
@@ -74,6 +74,7 @@ void Init()
 U64 sideKey;
 U64 pieceKeys[13][120];
 U64 casKeys[16];
+U64 EPkey[120];
 void HashInit()
 {
     random_device rd;
@@ -90,6 +91,8 @@ void HashInit()
     
     // for(int i=0; i<100; i++)
     //     fiftyKeys[i] = dist(gen);
+    for(int i=0; i<120; i++)
+        EPkey[i] = dist(gen);
     
     sideKey = dist(gen);
 
@@ -169,3 +172,16 @@ void InitSqScore()
         }
     }
 }
+
+int InputWaiting()
+{
+    fd_set readfds;
+    struct timeval tv;
+    FD_ZERO (&readfds);
+    FD_SET (fileno(stdin), &readfds);
+    tv.tv_sec=0; tv.tv_usec=0;
+    select(16, &readfds, 0, 0, &tv);
+
+    return (FD_ISSET(fileno(stdin), &readfds));
+}
+

@@ -1,4 +1,5 @@
 #include "bitboard.h"
+#include "move.h"
 struct History
 {
     int move;
@@ -18,7 +19,6 @@ private:
     void HashCas();
     void HashEP();
     void HashSide();
-    void UpdateCount();
     void AddPiece(int pc, int sq);
     void ClearPiece(int sq);
     void MovePiece(int from, int to);

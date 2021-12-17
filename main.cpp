@@ -1,7 +1,7 @@
 #include "defs.h"
 #include "agent.h"
 
-#define START "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1"
+
 #define PAWNMOVESW "rnbqkb1r/pp1p1pPp/8/2p1pP2/1P1P4/3P3P/P1P1P3/RNBQKBNR w KQkq e6 0 1"
 #define PAWNMOVESB "rnbqkbnr/p1p1p3/3p3p/1p1p4/2P1Pp2/8/PP1P1PpP/RNBQKB1R b KQkq e3 0 1"
 #define KNIGHTSKINGS "5k2/1n6/4n3/6N1/8/3N4/8/5K2 b - - 0 1"
@@ -25,84 +25,89 @@ int main()
 
 	Board b;
 	Agent a(&b);
-	b.LoadPosition(m7_1);
-	while(true)
-	{
-		b.Print(true);
-		string s;
-		cin >> s;
-		if(s[0]=='q')
-			break;
-		if(s[0]=='t')
-			b.Undo();
-		else if(s[0]=='s')
-		{
-			a.sInfo.depth = 8;
-			a.SearchPos();
-		}
+	a.UCIloop();
+	
+}
+
+// Board b;
+	// Agent a(&b);
+	// b.LoadPosition(m7_1);
+	// while(true)
+	// {
+	// 	b.Print(true);
+	// 	string s;
+	// 	cin >> s;
+	// 	if(s[0]=='q')
+	// 		break;
+	// 	if(s[0]=='t')
+	// 		b.Undo();
+	// 	else if(s[0]=='s')
+	// 	{
+	// 		a.sInfo.depth = 8;
+	// 		a.SearchPos();
+	// 	}
 
 		
-	}
-
-
-
-
-
-	// string fen = "START";
-	// //cin >> fen;
-	// Board b;
-	// b.LoadPosition(TEST);
-	// b.Print(false);
-	// ASSERT((b.Verify()));
-	// // b.PrintMap();
-	// Agent a(&b);
-
-	// auto v = a.FindMoves(false);
-	// int i=1;
-	// for(auto m:v)
-	// {
-	// 	cout << i++ << ": ";
-	// 	PrintMove(m.move);
 	// }
+
+
+
+
+
+	// // string fen = "START";
+	// // //cin >> fen;
+	// // Board b;
+	// // b.LoadPosition(TEST);
+	// // b.Print(false);
+	// // ASSERT((b.Verify()));
+	// // // b.PrintMap();
+	// // Agent a(&b);
+
+	// // auto v = a.FindMoves(false);
+	// // int i=1;
+	// // for(auto m:v)
+	// // {
+	// // 	cout << i++ << ": ";
+	// // 	PrintMove(m.move);
+	// // }
 	
 
-	// for(int d=4; d<5; d++)
-	// {
-	// 	//b.LoadPosition(fen);
-	// 	U64 ans=0;
-	// 	a.TotalMoves(d,ans);
-	// 	cout << d << ": " << ans << endl;
-	// }
-	// int m = MOVE(A2, A4, EMPTY, EMPTY, PS_FLAG);
-	// b.MakeMove(m);
-	// b.Verify();
-	// b.Print(false);
-	// for(string fen:fenlist)
-	// {
-	// 	Board b;
-	// 	Agent a(&b);
-	// 	b.LoadPosition(fen);
-	// 	ASSERT(b.Verify());
+	// // for(int d=4; d<5; d++)
+	// // {
+	// // 	//b.LoadPosition(fen);
+	// // 	U64 ans=0;
+	// // 	a.TotalMoves(d,ans);
+	// // 	cout << d << ": " << ans << endl;
+	// // }
+	// // int m = MOVE(A2, A4, EMPTY, EMPTY, PS_FLAG);
+	// // b.MakeMove(m);
+	// // b.Verify();
+	// // b.Print(false);
+	// // for(string fen:fenlist)
+	// // {
+	// // 	Board b;
+	// // 	Agent a(&b);
+	// // 	b.LoadPosition(fen);
+	// // 	ASSERT(b.Verify());
 
-	// Board b;
-	// Agent a(&b);
-	// ifstream file("fen.txt");
-	// string line;
-	// vector<string> fenlist;
-	// while(getline(file, line))
-	// 	fenlist.push_back(line);
-	// int i=0;
-	// for(string fen:fenlist)
-	// {
+	// // Board b;
+	// // Agent a(&b);
+	// // ifstream file("fen.txt");
+	// // string line;
+	// // vector<string> fenlist;
+	// // while(getline(file, line))
+	// // 	fenlist.push_back(line);
+	// // int i=0;
+	// // for(string fen:fenlist)
+	// // {
 
-	// 	b.LoadPosition(fen);
-	// 	for(int d=1; d<6; d++)
-	// 	{
-	// 		// cout << "running" << d << endl;
-	// 		U64 ans=0;
-	// 		a.TotalMoves(d,ans);
-	// 		cout << ans << " " << flush;
-	// 	}
-	// 	cout << endl;
-	// }
-}
+	// // 	b.LoadPosition(fen);
+	// // 	for(int d=1; d<6; d++)
+	// // 	{
+	// // 		// cout << "running" << d << endl;
+	// // 		U64 ans=0;
+	// // 		a.TotalMoves(d,ans);
+	// // 		cout << ans << " " << flush;
+	// // 	}
+	// // 	cout << endl;
+	// // }

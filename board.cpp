@@ -1,5 +1,4 @@
 #include "board.h"
-#include "move.h"
 bool History::operator<(const History &h)
 {
 	return posKey < h.posKey;
@@ -32,7 +31,7 @@ void Board::HashCas()
 }
 void Board::HashEP()
 {
-	posKey ^= pieceKeys[EMPTY][enPas];
+	posKey ^= EPkey[enPas];
 }
 void Board::HashSide()
 {
@@ -55,7 +54,7 @@ U64 Board::SetHash()
 	if(enPas!=NO_SQ)
 	{
 		ASSERT(OnBoard(enPas));
-		posKey ^= pieceKeys[0][enPas];
+		posKey ^= EPkey[enPas];
 	}
 	ASSERT(casInfo>=0 && casInfo<=15);
 	posKey ^= casKeys[casInfo];
@@ -152,6 +151,10 @@ void Board::LoadPosition(string fen)
 			int sq120 = get120from64[sq];
 			pieces[sq120]=piece;
 			f++;
+			pcList[piece].SetBit(sq);
+			material[pcCol[piece]]+=pcVal[piece];
+			if(isPawn[piece])
+				pawns.SetBit(sq);
 		}
 		idx++;
 		
@@ -195,34 +198,6 @@ void Board::LoadPosition(string fen)
 		idx++;
 	}
 	SetHash();
-	UpdateCount();
-}
-
-void Board::UpdateCount()
-{
-	for(int i=0; i<120; i++)
-	{
-		if(pieces[i]==EMPTY || pieces[i]==OUT)
-			continue;
-		int pc = pieces[i];
-		// pcCount[pc]++;
-		pcList[pc].SetBit(get64from120[i]);
-		int col = pcCol[pc];
-		// if(isBig[pc])
-		// 	bigCount[col]++;
-		// if(isMajor[pc])
-		// 	majCount[col]++;
-		// if(isMinor[pc])
-		// 	minCount[col]++;
-
-		material[col] += pcVal[pc];
-
-		if(isPawn[pc])
-		{
-			int sq64 = get64from120[i];
-			pawns.SetBit(sq64);
-		}
-	}
 }
 
 void Board::Print(bool onlyboard)
@@ -273,15 +248,15 @@ bool Board::Verify()
 {
 	// cout << "called";
 	BitBoard t_pawns[3];
-	int t_pcCount[13], t_bigCount[2], t_majCount[2], t_minCount[2], t_material[2];
+	int t_material[2];
 
-	for(int i=0; i<13; i++)
-		t_pcCount[i]=0;
+	// for(int i=0; i<13; i++)
+	// 	t_pcCount[i]=0;
 	for(int i=0; i<2; i++)
 	{
-		t_bigCount[i]=0;
-		t_majCount[i]=0;
-		t_minCount[i]=0;
+		// t_bigCount[i]=0;
+		// t_majCount[i]=0;
+		// t_minCount[i]=0;
 		t_material[i]=0;
 	}
 	for(int i=0; i<120; i++)
@@ -290,13 +265,13 @@ bool Board::Verify()
 		if(pc==EMPTY||pc==OUT)
 			continue;
 		int col = pcCol[pc];
-		t_pcCount[pc]++;
-		if(isBig[pc])
-			t_bigCount[col]++;
-		if(isMajor[pc])
-			t_majCount[col]++;
-		if(isMinor[pc])
-			t_minCount[col]++;
+		// t_pcCount[pc]++;
+		// if(isBig[pc])
+		// 	t_bigCount[col]++;
+		// if(isMajor[pc])
+		// 	t_majCount[col]++;
+		// if(isMinor[pc])
+		// 	t_minCount[col]++;
 		t_material[col] += pcVal[pc];
 		if(isPawn[pc])
 		{
@@ -452,6 +427,8 @@ void Board::PrintMap()
 void Board::ClearPiece(int sq)
 {
 	ASSERT(OnBoard(sq));
+	if(!NonEmpty(sq))
+		Print(false);
 	ASSERT(NonEmpty(sq));
 
 	int pc = pieces[sq];
@@ -538,13 +515,15 @@ void Board::Undo()
 	hist.pop_back();
 	int move = h.move;
 
-	int from = FROMSQ(move);
-	int to = TOSQ(move);
-	int capt = CAPTURED(move);
-	int prom = PROMOTED(move);
-	int casflag = move & MFLAGCA;
-	int epflag = move & MFLAGEP;
-	int psflag = move & MFLAGPS;
+
+
+	int from = GetFromSQ120(move);
+	int to = GetToSQ120(move);
+	int capt = GetCapture(move);
+	int prom = GetPromoted(move);
+	int casflag = move & CAS_FLAG;
+	int epflag = move & EP_FLAG;
+	int psflag = move & PS_FLAG;
 
 	sideToMove ^= 1;
 	HashSide();
@@ -600,16 +579,17 @@ void Board::Undo()
 
 bool Board::MakeMove(int move)
 {
+
 	ASSERT(Verify());
 	//cout << "verified" << endl;
 	//PrintMove(move);
-	int from = FROMSQ(move);
-	int to = TOSQ(move);
-	int capt = CAPTURED(move);
-	int prom = PROMOTED(move);
-	int casflag = move & MFLAGCA;
-	int epflag = move & MFLAGEP;
-	int psflag = move & MFLAGPS;
+	int from = GetFromSQ120(move);
+	int to = GetToSQ120(move);
+	int capt = GetCapture(move);
+	int prom = GetPromoted(move);
+	int casflag = move & CAS_FLAG;
+	int epflag = move & EP_FLAG;
+	int psflag = move & PS_FLAG;
 
 	ASSERT(OnBoard(from));
 	ASSERT(OnBoard(to));

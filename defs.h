@@ -3,7 +3,7 @@
 #ifndef DEFS_H
 #define DEFS_H
 
-// #define DEBUG 
+#define DEBUG 
 
 #ifndef DEBUG
 #define ASSERT(n)
@@ -22,9 +22,15 @@ exit(1);\
 #include <bits/stdc++.h>
 #include <random>
 #include<time.h>
+
 using namespace std;
 
 typedef unsigned long long U64;
+
+#define NAME "AlanFish"
+#define AUTHOR "PrabKat"
+
+#define START "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1"
 
 enum { EMPTY, wP, wN, wB, wR, wQ, wK, bP, bN, bB, bR, bQ, bK, OUT  };
 enum { FILE_A, FILE_B, FILE_C, FILE_D, FILE_E, FILE_F, FILE_G, FILE_H, FILE_NONE };
@@ -42,9 +48,9 @@ enum {
   A8 = 91, B8, C8, D8, E8, F8, G8, H8, NO_SQ=111, OFFBOARD
 };
 
-extern bool isBig[14];
-extern bool isMajor[14];
-extern bool isMinor[14];
+// extern bool isBig[14];
+// extern bool isMajor[14];
+// extern bool isMinor[14];
 
 extern bool isPawn[14];
 extern bool isKnight[14];
@@ -78,6 +84,7 @@ extern void Init();
 extern U64 pieceKeys[13][120];
 extern U64 casKeys[16];
 extern U64 sideKey;
+extern U64 EPkey[120];
 // extern U64 fiftyKeys[100];
 
 extern void HashInit();
@@ -85,5 +92,5 @@ extern void HashInit();
 extern vector<vector<int>> sqScore;
 extern int MateScore;
 extern void InitSqScore();
-
+extern int InputWaiting();
 #endif
